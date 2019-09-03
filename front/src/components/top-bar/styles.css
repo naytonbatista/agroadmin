@@ -1,0 +1,10 @@
+.view-child{
+    padding-left: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-left: solid 1px #ccc;
+}
+
+.view-selected{
+    font-weight: bold;
+}

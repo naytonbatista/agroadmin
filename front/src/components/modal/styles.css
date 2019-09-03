@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "Caviar Dreams";
+    src: url(../../assets/fonts/CaviarDreams.ttf);
+    
+  }
+
+*{
+    font-family: "Caviar Dreams"
+}
+
+
+#modal-back{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.5;
+    
+}
+
+#modal{
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#modal-content hr{
+    margin: 0;
+    padding: 0;
+}
+
+#modal-content h1{
+    padding: 0px;
+    margin: 0px;
+}
+
+#modal-content{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 30px #333;
+    justify-content: space-between;
+}
+
+#modal-content h1{
+    font-family: 'Caviar Dreams';
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#modal-content .padding{
+    padding: 15px;
+}
+
+#modal-content #modal-footer{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#modal-content #modal-footer .button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+#modal-content #modal-container{
+    flex-grow: 1;
+    margin-top: 10px;
+}
+
+

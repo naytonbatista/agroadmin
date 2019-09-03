@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "Caviar Dreams";
+    src: url(../../assets/fonts/CaviarDreams.ttf);
+    
+  }
+
+*{
+    font-family: "Caviar Dreams"
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.main-header{
+    background-color: #f5f5f5;
+    padding: 16px 32px 16px 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-header .coluna{
+    display: flex;
+    align-items: center;    
+}
+
+
+.main-header .sistema-nome{
+    font-weight: bold;
+    font-size: 16px;;
+}
+
+.main-header .profile-info{
+    padding-left: 8px;
+}
+
+.main-header .profile-pic{
+    border-radius: 20px;
+}
+
+.main-header .profile-name{
+    font-size: 14px;
+    
+}
+
+.main-header .profile-function{
+    font-size: 12px;
+    
+    
+}
+
+.main-footer {
+    position: fixed;
+    bottom:0px;
+    width:100%;
+}
+
+button {
+    margin-left: 5px;
+}
+
+.table-actions {
+    width: 150px;
+}
+
+.nav-bar{
+    box-sizing: border-box;
+    margin: 0;
+    background-color:#73e692;
+    color: #0f411c;
+    font-weight: bold;
+    display: flex;
+}
+
+.nav-bar span{
+    padding: 16px 32px;
+
+}
+
+.nav-bar span:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    
+}
+
