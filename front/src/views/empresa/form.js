@@ -1,15 +1,16 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
+import InputMask from 'react-input-mask'
 
 const modelo = [{
     linha: [
-        { descricao: 'Razão Social', placeholder: 'Razão Social', type: "text", name: 'razao_social', width: '7' },
-        { descricao: 'CNPJ', placeholder: 'CNPJ', type: "text", name: 'cnpj', width: '3' }
+        {  descricao: 'Razão Social', placeholder: 'Razão Social', type: "text", name: 'razao_social', width: '7' },
+        { mask:'99.999.999/9999-99', descricao: 'CNPJ', placeholder: 'CNPJ', type: "text", name: 'cnpj', width: '3' }
     ]
 },
 {
     linha: [
-        { descricao: 'Inscrição Estadual', placeholder: 'Inscrição Estadual', type: "text", name: 'inscricao_estadual', width: '3' },
+        { descricao: 'Inscrição Estadual', placeholder: 'Inscrição Estadual', type: "number", name: 'inscricao_estadual', width: '3' },
         { descricao: 'Home Page', placeholder: 'Home Page', type: "text", name: 'homepage', width: '5' },
         { descricao: 'Qtde Empregados', placeholder: 'Qtde Empregados', type: "text", name: 'quantidade_empregados', width: '2' },
     ]
@@ -24,13 +25,14 @@ const modelo = [{
 
 ];
 
-const FormEmpresa = () => {
-
+const FormEmpresa = ({ initialValues, handleSubmit, setFieldValue }) => {
+    
     return (
 
         <div>
-            <Formik>
+            <Formik onSubmit={handleSubmit} initialValues={initialValues}>
                 <Form>
+                    
                     <div className="container">
                         {
                             modelo.map((linhas, i) => (
@@ -40,10 +42,13 @@ const FormEmpresa = () => {
                                             <div key={j} className={`col-sm-${item.width}`}>
                                                 <div className="form-group">
                                                     <label>{item.descricao}</label>
-                                                    <Field className="form-control"
+                                                    <InputMask className="form-control"
                                                         placeholder={item.placeholder}
                                                         type={item.type}
                                                         name={item.name}
+                                                        onChange={text => setFieldValue(item.name, text)}
+                                                        mask={item.mask}
+                                                        
                                                     />
                                                 </div>
                                             </div>))

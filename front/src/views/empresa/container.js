@@ -13,25 +13,45 @@ import {
     withProps,
     withState,
     hoistStatics,
+    mapProps,
+    withHandlers,
 } from 'recompose';
+
+
+
+const model = {
+    razao_social: 'Nayton',
+    cnpj: "",
+    inscricao_estadual: "",
+    homepage: '',
+    quantidade_empregados: '',
+    socio_administrador: '',
+    sede: ''
+}
+
 
 const mapStateToProps = ({ empresa }) => ({ list: empresa.list });
 const mapDispatchToProps = dispatch => bindActionCreators({ ...EmpresaActions, ...ModalActions }, dispatch)
 
+const setValueField = (props) => (fieldName, ev) => {
+    props.setModel({ ...props.model, [fieldName]: ev.target.value });
+}
 
 const enhance = compose(
     connect(mapStateToProps, mapDispatchToProps),
-    defaultProps({
-        list: [],
-        error: false
-    }),
+    withState('model', 'setModel', model),
     lifecycle({
         componentWillMount() {
+
             this.props.getList();
         }
     }),
+    withHandlers({
+        setFieldValue: setValueField,
+        getValues: (props) => (e) => { console.log(props.model) }
+    }),
     withProps(props => ({
-        add: () => props.showModal(true, 'Cadastro de Empresa', <FormEmpresa />)
+        add: () => props.showModal(true, 'Cadastro de Empresa', props.getValues, <FormEmpresa setFieldValue={props.setFieldValue} initialValues={props.model} />)
     }))
 
 );

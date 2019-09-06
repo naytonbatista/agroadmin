@@ -11,6 +11,7 @@
     "jquery": "2.2.3",
     "react": "16.4.2",
     "react-dom": "16.4.2",
+    "react-input-mask": "^2.0.4",
     "react-redux": "5.0.7",
     "react-redux-toastr": "7.4.0",
     "react-router": "4.3.1",

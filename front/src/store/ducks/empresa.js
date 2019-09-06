@@ -10,6 +10,15 @@ export const { Types, Creators } = createActions({
 const initialState = {
     list: [],
     error: false,
+    model:{
+        razao_social: '',
+        cnpj: "",
+        inscricao_estadual: "",
+        homepage: '',
+        quantidade_empregados: '',
+        socio_administrador: '',
+        sede: ''
+    }
 };
 
 const getCompanyList = (state = initialState, { }) => ({
