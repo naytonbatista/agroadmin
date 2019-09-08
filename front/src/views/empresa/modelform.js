@@ -15,7 +15,7 @@ const modelo = [{
 },
 {
     linha: [
-        { descricao: 'Sócio Administrador', placeholder: 'Sócio Admnistrador', type: "text", name: 'socio_administrador', width: '5' },
+        { descricao: 'Sócio Administrador', placeholder: 'Sócio Admnistrador', type: "object", name: 'socio_administrador', width: '5' },
         { descricao: 'Sede', placeholder: 'Sede', type: "select", options: TipoContratoImovel, name: 'sede', width: '5' },
 
     ]
