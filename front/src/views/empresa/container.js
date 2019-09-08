@@ -42,7 +42,6 @@ const enhance = compose(
     withState('model', 'setModel', model),
     lifecycle({
         componentWillMount() {
-
             this.props.getList();
         }
     }),

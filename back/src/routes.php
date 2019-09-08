@@ -21,4 +21,5 @@ $app->options('/{routes:.+}', function ($req, $res, $args) {
 
 require __DIR__ . '/routes/auth.php';
 require __DIR__ . '/routes/empresa.php';
+require __DIR__ . '/routes/tipocontratoimovel.php';
 require __DIR__ . '/routes/users.php';
