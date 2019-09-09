@@ -1,6 +1,4 @@
 import { TipoContratoImovel } from '../../lovs'
-import Pessoa from '../../../src/views/pessoa'
-
 
 const modelo = [{
     linha: [
@@ -17,7 +15,7 @@ const modelo = [{
 },
 {
     linha: [
-        { component: Pessoa , descricao: 'Sócio Administrador', placeholder: 'Sócio Admnistrador', type: "object", name: 'socio_administrador', width: '5' },
+        { descricao: 'Sócio Administrador', placeholder: 'Sócio Admnistrador', type: "object", name: 'socio_administrador', width: '5' },
         { descricao: 'Sede', placeholder: 'Sede', type: "select", options: TipoContratoImovel, name: 'sede', width: '5' },
 
     ]

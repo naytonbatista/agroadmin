@@ -20,21 +20,22 @@ import {
 
 
 const model = {
-    razao_social: 'Nayton',
+    razao_social: '',
     cnpj: "",
     inscricao_estadual: "",
     homepage: '',
     quantidade_empregados: '',
     socio_administrador: '',
-    sede: ''
+    sede: '1'
 }
 
 
 const mapStateToProps = ({ empresa }) => ({ list: empresa.list });
 const mapDispatchToProps = dispatch => bindActionCreators({ ...EmpresaActions, ...ModalActions }, dispatch)
 
-const setValueField = (props) => (fieldName, ev) => {
-    props.setModel({ ...props.model, [fieldName]: ev.target.value });
+const setValueField = (props) => (fieldName, value) => {
+    
+    props.setModel({ ...props.model, [fieldName]: value });
 }
 
 const enhance = compose(

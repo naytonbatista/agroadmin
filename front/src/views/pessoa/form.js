@@ -21,12 +21,11 @@ const FormEmpresa = ({ initialValues, handleSubmit, setFieldValue }) => {
                                                 <div className="form-group">
                                                     <label>{item.descricao}</label>
                                                     <Field className="form-control"
-                                                        component={item.component}
                                                         placeholder={item.placeholder}
                                                         options={item.options}
                                                         type={item.type}
                                                         name={item.name}
-                                                        onChange={(ev, value)=> setFieldValue(item.name, value || (ev && ev.target && ev.target.value) || null)}
+                                                        onChange={text => setFieldValue(item.name, text)}
                                                         mask={item.mask}
                                                    />
                                                 </div>

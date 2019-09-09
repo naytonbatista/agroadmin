@@ -3,22 +3,44 @@ import './styles.css'
 import InputMask from 'react-input-mask'
 import { SModal } from '../../components'
 
-export default ({ type = 'text', className, placeholder, name, onChange, mask, options = [], modalOpen, setModalOpen }) => {
+export default ({ type = 'text',
+    className,
+    placeholder,
+    name,
+    onChange,
+    mask,
+    options = [],
+    modalOpen,
+    setModalOpen,
+    component,
+    setCustomValue,
+    value,
+    setValue }) => {
+
+    const CustomComponent = component;
 
     const Custominput = () => {
-        
+
         switch (type) {
             case 'object':
                 return (
-                    <div>
+                    <div className="input-group">
                         <input className={`${className} input-object`}
                             name={name}
                             autoComplete="off"
-                            onChange={onChange}
                             onClick={() => setModalOpen(name)}
-
+                            readOnly
+                            value={value && value.field == name && value.description || ''}
                         />
-                        {modalOpen == name && <SModal opened={true} title="Lista de pessoas" > Olá</SModal>}
+                        <span className="input-group-btn">
+                            <button onClick={() => setCustomValue(name, null)} className="btn btn-default" type="button"> <i className="fa fa-lg fa-ban"></i> </button>
+                        </span>
+                        {
+                            modalOpen == name &&
+                            <SModal opened={true} title="Selecionar Pessoa" >
+                                <CustomComponent fieldname={name} dbClick={setCustomValue} />
+                            </SModal>
+                        }
                     </div>)
             case 'select':
                 return (<select className={className}

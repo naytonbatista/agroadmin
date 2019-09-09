@@ -19,9 +19,7 @@ export default ({opened = true, title, save, close = () => { }, children }) => {
                     <div id="sm-modal-footer">
                         <hr></hr>
                         <div className="padding button-container">
-                            <button type="button" onClick={ () => save() } className="btn btn-success btn-sm">Salvar</button>
                             <button type="button" onClick={close} className="btn btn-danger btn-sm">Fechar</button>
-
                         </div>
                     </div>
 
