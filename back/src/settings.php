@@ -18,10 +18,14 @@ return [
 
         'db' => [
             'driver' => 'mysql',
-            'host' => 'localhost',
-            'database' => 'bd_agro',
-            'username' => 'root',
-            'password' => '1234',
+            //'host' => 'localhost',
+            // 'database' => 'bd_agro',
+            // 'username' => 'root',
+            // 'password' => '1234',
+            'host' => 'dbagro.cl6aqfl1m7gj.us-east-2.rds.amazonaws.com',
+            'database' => 'db_agro',
+            'username' => 'admin',
+            'password' => 'agroewerton!178',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => ''

@@ -25,7 +25,7 @@ const model = {
     inscricao_estadual: "",
     homepage: '',
     quantidade_empregados: '',
-    socio_administrador: '',
+    socio_administrador: null,
     sede: '1'
 }
 
@@ -49,6 +49,7 @@ const enhance = compose(
     withHandlers({
         setFieldValue: setValueField,
         saveEmpresa: (props) => (e) => { 
+            console.log(props);
             props.save(props.model);
             props.showModal(false) ;
         }
