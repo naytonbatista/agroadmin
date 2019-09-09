@@ -48,10 +48,13 @@ const enhance = compose(
     }),
     withHandlers({
         setFieldValue: setValueField,
-        getValues: (props) => (e) => { console.log(props.model) }
+        saveEmpresa: (props) => (e) => { 
+            props.save(props.model);
+            props.showModal(false) ;
+        }
     }),
     withProps(props => ({
-        add: () => props.showModal(true, 'Cadastro de Empresa', props.getValues, <FormEmpresa setFieldValue={props.setFieldValue} initialValues={props.model} />)
+        add: () => props.showModal(true, 'Cadastro de Empresa', props.saveEmpresa, <FormEmpresa setFieldValue={props.setFieldValue} initialValues={props.model} />)
     }))
 
 );

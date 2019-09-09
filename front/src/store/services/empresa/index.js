@@ -10,3 +10,12 @@ export const getList = () => {
                  .catch(err => err);
 
 }
+
+
+export const save = (request) => {
+
+    return axios.post(`${url}`, request) 
+                 .then ( response => response.data )
+                 .catch(err => err);
+
+}
